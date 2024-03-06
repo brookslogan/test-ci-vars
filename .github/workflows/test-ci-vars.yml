@@ -14,9 +14,9 @@ jobs:
 
       - name: test context vars
         run: |
+          cat("E: ${{ secrets.FAKE_SECRET }}\n")
           cat("A: ${{ github.event_name}}\n")
           cat("B: ${{ github.run_id}}\n")
           cat("C: ${{ github.event_name != 'pull_request' || github.run_id }}\n")
           cat("D: ${{ github.base_ref }}\n")
-          cat("E: ${{ secrets.FAKE_SECRET }}\n")
         shell: Rscript {0}
