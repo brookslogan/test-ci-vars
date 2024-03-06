@@ -18,4 +18,5 @@ jobs:
           cat("${{ github.run_id}}\n")
           cat("${{ github.event_name != 'pull_request' || github.run_id }}\n")
           cat("${{ github.base_ref }}\n")
+          cat("${{ secrets.TEST_SECRET }}\n")
         shell: Rscript {0}
