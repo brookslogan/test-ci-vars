@@ -9,10 +9,11 @@ jobs:
   concurrency:
     group: pkgdown-${{ github.event_name != 'pull_request' || github.run_id }}
   steps:
+
     - name: test context vars
-      shell: Rscript {0}
       run: |
         cat("${{ github.event_name}}\n")
         cat("${{ github.run_id}}\n")
         cat("${{ github.event_name != 'pull_request' || github.run_id }}\n")
         cat("${{ github.base_ref }}\n")
+      shell: Rscript {0}
