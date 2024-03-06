@@ -3,6 +3,8 @@ on:
     # branches: [main]
   workflow_dispatch:
 
+name: test vars
+
 jobs:
   test-context-var:
     runs-on: ubuntu-latest
